@@ -19,7 +19,7 @@ function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
   passwordText.value = password;
-}
+};
 
 function generatePassword() {
 const passLength = prompt("How many characters between 8 and 30 would you like your password to contain?");
@@ -28,7 +28,7 @@ if (passLength >= 8 && passLength <= 128 ) {
 } else {
   alert("Insufficient Password");
   generatePassword ();
-}
+};
 
 const genLowerCase = confirm("Do you want to include lowercase letters?");
 const genUpperCase = confirm("Do you want to include uppercase letters?");
@@ -45,7 +45,7 @@ let validSelect = charSelect.filter(charSelect => charSelect == true); //https:/
 
 /*function checkChar(charSelect) {
   return charSelect == true;
-}
+};
 
 let validSelect = charSelect.filter(checkChar); */    // ***** longhanded for of the arrow function for charSet.filter called above
 
@@ -54,35 +54,35 @@ if (genLowerCase) {
   selection.push(lowerCase);
 } else {
   console.log("Lowercase Characters Not Included"); // method .push to compile selected arrays to added into new array https://www.w3schools.com/jsref/jsref_push.asp
-}
+};
 
 if (genUpperCase) {
   console.log("Include Uppercase Characters");
   selection.push(upperCase);
 } else {
   console.log("Uppercase Characters Not Included");
-}
+};
 
 if (genNumberChar) {
   console.log("Include Number Characters");
   selection.push(numberChar);
 } else {
   console.log("Number Characters Not Included");
-}
+};
 
 if (genSpecChar) {
   console.log("Include Special Characters");
   selection.push(specialChar);
 } else {
   console.log("Special Characters Not Included");
-}
+};
 
 console.log(validSelect.length);
 
-if (validSelect.length == 0) {          // 0 is not an index but it is looking for the number of elements in the array
+if (validSelect.length == 0) {          // 0 is not an index but it is looking for the number of elements contained in the array
   alert("No Valid Options Selected");
   generatePassword();
-}
+};
 
 console.log(charSelect); // debugging
 
@@ -99,7 +99,7 @@ for (let i = 0; i < passLength; i++) {
   let randomize = selection[(Math.random() * selection.length) | 0]; // taking the array length of the selections and randomizing it using the terminating condition in the for statement 
   let ranChar = randomize[(Math.random() * randomize.length) | 0];     // then adding a random character to password to create the final generated password using | 0 to generate a whole integer
   finalPass += ranChar; // adding variables using +=
-}
+};
 
 console.log(finalPass); //debugging
 
@@ -113,7 +113,7 @@ return document.getElementById("password").value = finalPass;
 // https://www.w3schools.com/jsref/dom_obj_document.asp list of document .methods for html/js
 // https://www.w3schools.com/jsref/met_document_getelementbyid.asp
 // Mike Dane youtube accessing HTML elements in Javascript video
-}
+};
 
 // Add event listener to generate button
 // Mike Dane youtube eventlistner video
